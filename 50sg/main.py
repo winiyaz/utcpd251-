@@ -17,21 +17,25 @@ turtle.shape(img)
 # Loading the data into a datframe
 data = pd.read_csv('s50.csv')
 all_states = data.state.to_list()
+gues = []
 
-# Setting dialog
-ans = scr.textinput(title="WhereBooty", prompt="WhichFlavor")
-print(ans)
+while len(gues) < 50:
 
-# Logic with data from the dataframe
+	# Setting dialog
+	ans = scr.textinput(title="WhereBooty", prompt="WhichFlavor")
+	print(ans)
 
-if ans in all_states:
-	t = turtle.Turtle()
-	t.hideturtle()
-	t.penup()
-	t.color("#facc15")
-	state_data = data[data.state == ans]
-	t.goto(state_data.x.item(), state_data.y.item())
-	t.write(state_data.state.item())
+	# Logic with data from the dataframe
+
+	if ans in all_states:
+		gues.append(ans)
+		t = turtle.Turtle()
+		t.hideturtle()
+		t.penup()
+		t.color("#facc15")
+		state_data = data[data.state == ans]
+		t.goto(state_data.x.item(), state_data.y.item())
+		t.write(state_data.state.item())
 
 # --- Project Setup ---
 # Getting the coordinates in the image
