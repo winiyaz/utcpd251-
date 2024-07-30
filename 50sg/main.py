@@ -22,7 +22,7 @@ gues = []
 while len(gues) < 50:
 
 	# Setting dialog
-	ans = scr.textinput(title="WhereBooty", prompt="WhichFlavor")
+	ans = scr.textinput(title=f"{len(gues)}/50 StateCorrect", prompt="WhichFlavor").title()
 	print(ans)
 
 	# Logic with data from the dataframe
