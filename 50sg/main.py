@@ -26,7 +26,16 @@ while len(gues) < 50:
 	print(ans)
 
 	# Logic with data from the dataframe
-
+	if ans == "Exit":
+		miss = []
+		for s in all_states:
+			if s not in gues:
+				miss.append(s)
+		print(f'Missed = {len(miss)}')  # Missed States
+		print(miss)
+		new_data = pd.DataFrame(miss)
+		new_data.to_csv("bastard.csv")
+		break
 	if ans in all_states:
 		gues.append(ans)
 		t = turtle.Turtle()
@@ -42,4 +51,4 @@ while len(gues) < 50:
 getMouseClick = get_mouse_click_corr  # This already done  s50.csv
 # Using Main loop
 # scr.exitonclick()
-turtle.mainloop()
+# turtle.mainloop()
