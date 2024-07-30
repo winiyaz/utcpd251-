@@ -14,7 +14,7 @@ scr.addshape(img)
 turtle.shape(img)
 
 # Getting the coordinates in the image
-get_mouse_click_corr
+# get_mouse_click_corr # This already done  s50.csv
 
 
 
