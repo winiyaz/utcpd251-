@@ -11,3 +11,5 @@ N | What ?
 --- | --- 
 [`KAG`](./KAG) | Notebooks work
 [`50sg`](./50sg) | 50 States Game
+[`50sgv2`](./50sgv2) | Second version of the game with your own thing
+
