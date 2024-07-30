@@ -1,25 +1,41 @@
 # Game work is being done here
 import turtle
+
+import pandas as pd
+
 from getcor import get_mouse_click_corr
-# Imports
 
-
+# Screen Setup
 scr = turtle.Screen()
 scr.bgcolor("black")
 scr.setup(width=800, height=600)
 scr.title("USBootyMap")
 img = "bsg.gif"
 scr.addshape(img)
-
 turtle.shape(img)
 
+# Loading the data into a datframe
+data = pd.read_csv('s50.csv')
+all_states = data.state.to_list()
+
+# Setting dialog
+ans = scr.textinput(title="WhereBooty", prompt="WhichFlavor")
+print(ans)
+
+# Logic with data from the dataframe
+
+if ans in all_states:
+	t = turtle.Turtle()
+	t.hideturtle()
+	t.penup()
+	t.color("#facc15")
+	state_data = data[data.state == ans]
+	t.goto(state_data.x.item(), state_data.y.item())
+	t.write(state_data.state.item())
+
+# --- Project Setup ---
 # Getting the coordinates in the image
-# get_mouse_click_corr # This already done  s50.csv
-
-
-
-
-
+getMouseClick = get_mouse_click_corr  # This already done  s50.csv
 # Using Main loop
 # scr.exitonclick()
 turtle.mainloop()
